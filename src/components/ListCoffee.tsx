@@ -49,7 +49,7 @@ const ListCoffee = ({ search }: Props) => {
     try {
       const response = await fetch("https://api.sampleapis.com/coffee/hot");
       const data = await response.json();
-      if (data.error) throw data;
+      if (data?.error) throw data;
       if (data?.length) setCoffees(data);
     } catch (err) {
       console.error(err);
