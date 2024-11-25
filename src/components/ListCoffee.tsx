@@ -19,17 +19,17 @@ const ListCoffee = ({ search }: Props) => {
   const [coffees, setCoffees] = useState<ICoffee[]>([]);
 
   const sortedSelectedCoffees = useMemo(() => {
-    const clonedListSelected = [...selectedCoffees];
-    return clonedListSelected.sort((a, b) => a.title.localeCompare(b.title));
+    const clonedSelectedCoffees = [...selectedCoffees];
+    return clonedSelectedCoffees.sort((a, b) => a.title.localeCompare(b.title));
   }, [selectedCoffees]);
 
   const filteredCoffees = useMemo(() => {
     return coffees.filter((coffee) => {
-      const isContainSearchKeyWord = search
+      const isContainSearchKeyword = search
         ? coffee.title.includes(search)
         : true;
       const isInBlackListCoffees = blackListCoffees.includes(coffee.title);
-      return !isInBlackListCoffees && isContainSearchKeyWord;
+      return !isInBlackListCoffees && isContainSearchKeyword;
     });
   }, [search, coffees]);
 
