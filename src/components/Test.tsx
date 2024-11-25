@@ -14,10 +14,11 @@ function Test() {
   );
 
   useEffect(() => {
-    // const timeoutId = setTimeout(() => {
-    //   alert("Chúc mừng bạn trúng thưởng iPhone 17");
-    // }, 1000);
-    // return () => clearTimeout(timeoutId);
+    const timeoutId = setTimeout(() => {
+      alert("Chúc mừng bạn trúng thưởng iPhone 17");
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
